@@ -5,12 +5,13 @@
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Elegant Japanese serif -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg: #050505;
-      --fg: rgba(255,255,255,.95);
+      --fg: rgba(255,255,255,0.92);
     }
 
     html, body {
@@ -29,16 +30,9 @@
     }
 
     .wrap{
-      width: min(720px, 92vw);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 26px;
-      padding: 40px 0;
-
       opacity: 0;
-      transform: translateY(5px);
-      animation: appear 0.7s ease-out forwards;
+      transform: translateY(6px);
+      animation: fadeIn 0.7s ease-out forwards;
     }
 
     .text{
@@ -47,54 +41,20 @@
       font-weight: 300;
       letter-spacing: 1.4px;
       text-align: center;
-
-      /* more present breathing */
-      animation: breathe 2.4s ease-in-out infinite;
-      text-shadow: 0 0 26px rgba(255,255,255,.12);
+      text-shadow: 0 0 26px rgba(255,255,255,0.12);
     }
 
-    .img{
-      width: min(60px, 14vw);   /* קטנטונת */
-      height: auto;
-      opacity: 0.85;
-    
-      /* ביטול כל תחושת קופסה */
-      border-radius: 0;
-      box-shadow: none;
-    
-      /* התמזגות ברקע */
-      mix-blend-mode: lighten;
-      filter: brightness(0.95) contrast(1.05);
-    }
-
-    @keyframes appear {
+    @keyframes fadeIn {
       to {
         opacity: 1;
         transform: translateY(0);
-      }
-    }
-
-    /* faster & more visible breathing */
-    @keyframes breathe {
-      0% {
-        opacity: 0.75;
-        filter: brightness(0.92);
-      }
-      50% {
-        opacity: 1;
-        filter: brightness(1.06);
-      }
-      100% {
-        opacity: 0.75;
-        filter: brightness(0.92);
       }
     }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="text">You are the Buddha</div>
-    <!-- <img class="img" src="buddha.png" alt="Buddha" /> -->
+    <div class="text">you are the Buddha</div>
   </main>
 </body>
 </html>
